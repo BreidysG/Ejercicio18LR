@@ -41,7 +41,10 @@ function startTimer() {
 function displayCircles(circleNumber) {
     circleContainer.innerHTML = ''; // Limpiar contenedor
 
-    const sizes = [50, 100, 150, 200, 250, 300]; // Tamaño de los círculos
+    let sizes = [50, 100, 150, 200, 250, 300];
+    if (window.innerHeight <= 700) {
+        sizes = [75, 100, 130, 170, 200, 225]; // Reducir alturas en dispositivos móviles
+    } // Tamaño de los círculos
 
     // Crear círculo
     const circle = document.createElement('div');
